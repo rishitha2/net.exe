@@ -1,4 +1,6 @@
  # Steps to execute the program: 
+ 
+Net command is available from within the command prompt in all windows operating systems. 
 
 Step 1: The code helps to capture net.exe functionalities like the net use, net share, net user, net view, net local and net local group. 
 
@@ -8,6 +10,11 @@ Step 3: Once you are in the location where you have your program. Execute the .e
 
  ## Use: 
 filename.exe localhost or IPaddress
+
+## Result: 
+ 
+ The code here would help you capture information about all user accounts, Lists all connections made to a shared resource on the server or all connections established from a particular computer, information about each local group account on the specified server, user account, computer, or group account information, information about each global group in the security database, Displays a list of domains, computers, or resources that are being shared by the specified computer
+
 
 ### References : 
 
