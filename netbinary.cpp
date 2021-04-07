@@ -281,7 +281,8 @@ int getShare(int argc, TCHAR* lpszArgv[])
             //
             for (i = 1; i <= er; i++)
             {
-                printf("%-20S%-30S%-8u", p->shi502_netname, p->shi502_path, p->shi502_current_uses);
+                printf("%-20S%-30S%-8u ", p->shi502_netname, p->shi502_path, p->shi502_current_uses );
+               
                 //
                 // Validate the value of the 
                 //  shi502_security_descriptor member.
@@ -309,51 +310,6 @@ int getShare(int argc, TCHAR* lpszArgv[])
 
 
 
-int getView(int argc, TCHAR* lpszArgv[])
-{
-    PSHARE_INFO_502 BufPtr;
-    NET_API_STATUS res3;
-    LPTSTR   lpszServer = NULL, lpszShare;
-    //
-    // Check command line arguments.
-    //
-    switch (argc)
-    {
-    case 3:
-        lpszServer = lpszArgv[2];
-    case 2:
-        lpszShare = lpszArgv[1];
-        break;
-    default:
-        printf("Usage: NetShareGetInfo sharename <servername>\n");
-        return;
-    }
-    //
-    // Call the NetShareGetInfo function, specifying level 502.
-    //
-    if ((res = NetShareGetInfo(lpszServer, lpszShare, 502, (LPBYTE*)&BufPtr)) == ERROR_SUCCESS)
-    {
-        //
-        // Print the retrieved data.
-        //
-        printf("%S\t%S\t%u\n", BufPtr->shi502_netname, BufPtr->shi502_path, BufPtr->shi502_current_uses);
-        //
-        // Validate the value of the 
-        //  shi502_security_descriptor member.
-        //
-        if (IsValidSecurityDescriptor(BufPtr->shi502_security_descriptor))
-            printf("It has a valid Security Descriptor.\n");
-        else
-            printf("It does not have a valid Security Descriptor.\n");
-        //
-        // Free the allocated memory.
-        //
-        NetApiBufferFree(BufPtr);
-    }
-    else
-        printf("Error: %ld\n", res3);
-    return 0;
-}
 
 
 
@@ -373,7 +329,7 @@ int wmain(int argc, wchar_t* argv[])
         exit(1);
     }
     //
-    // Call the NetUserGetGroups function, specifying level 0.
+    // Call the NetLocalGroupEnum function, specifying level 0.
     //
     nStatus = NetLocalGroupEnum(argv[1],
         0,
@@ -393,10 +349,10 @@ int wmain(int argc, wchar_t* argv[])
 
         if ((pTmpBuf = pBuf) != NULL)
         {
-            fprintf(stderr, "\nGlobal group(s):\n");
+            fprintf(stderr, "\nLocal group(s):\n");
             //
             // Loop through the entries; 
-            //  print the name of the global groups 
+            //  print the name of the locals groups 
             //  to which the user belongs.
             //
             for (i = 0; i < dwEntriesRead; i++)
@@ -425,12 +381,12 @@ int wmain(int argc, wchar_t* argv[])
     if (pBuf != NULL)
         NetApiBufferFree(pBuf);
 
-
+    printf("Thelist of serves for the workfgroup is not available ");
     nStatus = getUser(argc, argv);
     res = getGroups(argc, argv);
     res1 = getUse(argc, argv);
     res2 = getShare(argc, argv);
-    res3 = getView(argc, argv);
+    
 
     return 0;
 
