@@ -1,7 +1,5 @@
-# net.exe
+net.exe
 
-Step 1: The code helps to capture net.exe functionalities like the net use, net share, net user, net view, net local, net local group. 
-
-Step 2: Once you load the code on the visual studio, debug the code and see if you have any error. If you don’t have any, then open command prompt and just to the local where you have the program saved. 
-
-Step 3: Once you are in the location where you have your program. Execute the .exe file from the debug folder. Use the following format to execute the program filename.exe localhost. I am passing my argument as localhost. 
+The net command is used to manage the network resouces. 
+Syntax :
+<img width="646" alt="Screenshot 2021-04-07 at 3 49 59 PM" src="https://user-images.githubusercontent.com/38780740/113925336-ea8fc780-97b8-11eb-8c50-2ed1a37f0934.png">
