@@ -6,6 +6,6 @@ Step 2: Once you load the code on the visual studio and debug the code. Next, op
 
 Step 3: Once you are in the location where you have your program. Execute the .exe file from the debug folder. Use the following format to execute the program filename.exe localhost. I am passing my argument as localhost. 
 
-Use:
-# filename.exe <localhost>  or <IPaddress>
+ ## Use:
+ filename.exe <localhost>  or <IPaddress>
 
