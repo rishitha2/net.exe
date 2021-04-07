@@ -1,8 +1,11 @@
-The net command is used to manage the network resouces. Net command is available from within the command prompt in all windows operating systems. 
-Syntax :
+ # Steps to execute the program: 
 
-<img width="646" alt="Screenshot 2021-04-07 at 3 49 59 PM" src="https://user-images.githubusercontent.com/38780740/113925336-ea8fc780-97b8-11eb-8c50-2ed1a37f0934.png">
+Step 1: The code helps to capture net.exe functionalities like the net use, net share, net user, net view, net local and net local group. 
 
-The code here would help you capture information about all user accounts, all connections made to a shared resource on the server or all connections established from a particular computer, information about each local group account on the specified server, user account information or group account information, information about each global group in the security database and a list of domains, computers, or resources that are being shared by the specified computer 
+Step 2: Once you load the code on the visual studio and debug the code. Next, open command prompt and go to the location where you have the program saved. 
 
+Step 3: Once you are in the location where you have your program. Execute the .exe file from the debug folder. Use the following format to execute the program filename.exe localhost. I am passing my argument as localhost. 
+
+Use:
+# filename.exe <localhost>  or <IPaddress>
 
